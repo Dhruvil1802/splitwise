@@ -1,16 +1,16 @@
 import datetime
 from django.db.models import Q
-from user.models import User
+from user.models import Users
 
 from common.constants import TOKEN_IS_EXPIRED
-from security.serializers import UserAuthTokenSerializer
+from .serializers import UserAuthTokenSerializer
 from exceptions.generic import CustomBadRequest, GenericException
 from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
 import jwt
 from splitwise import settings
 
-from models import UserAuthTokens
+from .models import UserAuthTokens
 
 
 
@@ -66,12 +66,12 @@ class UserJWTAuthentication(authentication.BaseAuthentication):
         
             claims = jwt.decode(user_token, key=settings.JWT_SECRET, algorithms=[settings.JWT_ALGORITHM])
             print("claims", claims)
-            user = User.objects.get(user_id=claims["user_id"], email=claims["email"], is_deleted=False)
+            user = Users.objects.get(user_id=claims["user_id"], email=claims["email"], is_deleted=False)
             print("user here", user)
 
             return user, claims
         
-        except User.DoesNotExist:
+        except Users.DoesNotExist:
             raise AuthenticationFailed("User does not exist")
         except:
             GenericException()

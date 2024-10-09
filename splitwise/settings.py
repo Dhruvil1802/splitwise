@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from logging import config
 from pathlib import Path
 from datetime import timedelta
 
@@ -39,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user',
+    'exceptions',
+    'common',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +144,11 @@ ACCESS_TOKEN_LIFETIME = timedelta(minutes=120)
 REFRESH_TOKEN_LIFETIME = timedelta(days=30)
 JWT_ALGORITHM = "HS512"
 JWT_SECRET = "key@LoginaccEss"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dhruvilphotos06@gmail.com'
+EMAIL_HOST_PASSWORD = 'ngyc nhfp qyan ahqx'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

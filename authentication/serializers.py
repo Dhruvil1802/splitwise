@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import UserAuthTokens
+from .models import UserAuthTokens
 
 
 class UserAuthTokenSerializer(serializers.ModelSerializer):
