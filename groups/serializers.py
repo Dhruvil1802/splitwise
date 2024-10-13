@@ -9,5 +9,5 @@ class GroupSerializer(serializers.ModelSerializer):
 class GroupMemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = GroupMemebers
-        feilds = "__all__"
+        fields = "__all__"
         

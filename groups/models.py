@@ -7,7 +7,7 @@ from user.models import Users
     
 class Groups(Audit):
     class Meta:
-        db_table = 'up_groups'
+        db_table = 'sw_groups'
 
     group_id = models.BigAutoField(primary_key=True)
     group_name = models.CharField(max_length=255)
@@ -15,7 +15,7 @@ class Groups(Audit):
 
 class GroupMemebers(Audit):
     class Meta:
-        db_table = 'up_group_members'
+        db_table = 'sw_group_members'
 
     group_memeber_id = models.BigAutoField(primary_key=True)
     group = models.ForeignKey(Groups,on_delete=models.CASCADE)
