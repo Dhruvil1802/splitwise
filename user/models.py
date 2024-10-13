@@ -6,7 +6,7 @@ from common.models import Audit
     
 class Users(Audit):
     class Meta:
-        db_table = 'up_User'
+        db_table = 'sw_user'
 
     user_id = models.BigAutoField(primary_key=True)
     user_name = models.CharField(max_length=255)
@@ -15,7 +15,7 @@ class Users(Audit):
 
 class UserOTP(Audit):
     class Meta:
-        db_table = "fd_user_otp"
+        db_table = "sw_user_otp"
 
     user_otp_id = models.BigAutoField(primary_key=True)
     user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
