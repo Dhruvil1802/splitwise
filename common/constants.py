@@ -17,9 +17,17 @@ NEW_PASSWORD_DOESNT_MATCH = "new password doesnt match"
 OTP_SENT_SUCCESSFULLY = "OTP sent successfully"
 OTP_DOESNT_MATCH = "OTP_doesnt_match"
 OTP_EXPIRED = "OTP_expired"
+
 USER_DOESNT_EXISTS = "user doesn't exists"
 USER_IS_ALREADY_IN_THE_GROUP= "user is already in the group"
 USER_ADDED_SUCCESSFULLY_IN_THE_GROUP = "user added successfully in the group"
-GROUP_NOT_FOUND = "groups not found"
+
+GROUP_NOT_FOUND = "group not found"
 GROUP_CREATED_SUCCESSFULLY = "Group created successfully"
 GROUP_ALREADY_EXISTS="group already exists"
+
+YOU_ALREADY_JOINED_THE_GROUP = "you are already in the group"
+CONNECTION_CREATED_SUCCESSFULLY = "connection created successfully"
+CONNECTION_ALREADY_EXISTS = "connection already exists"
+GROUPMEMBER_NOT_FOUND = "group member not found"
+CONNECTION_NOT_FOUND = "connection not found"
