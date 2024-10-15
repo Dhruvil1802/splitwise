@@ -20,3 +20,13 @@ class GroupConnectionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = GroupConnections
         fields = "__all__"
+
+class UpdateOwedMoneyInGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GroupConnections
+        fields = ['money_owes']
+
+class UpdateOwedMoneySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Connections
+        fields = ['money_owes']

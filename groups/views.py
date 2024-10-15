@@ -48,6 +48,7 @@ class ManageGroup(APIView):
             return CustomBadRequest(messages=GROUP_NOT_FOUND)
         
         except:
+            traceback.print_exc()
             return GenericException()
 
     # create group

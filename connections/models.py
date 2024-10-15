@@ -28,7 +28,7 @@ class Connections(Audit):
     connection_id = models.BigAutoField(primary_key=True)
     user1 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user1')
     user2 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user2')
-    money_owes = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    money_owes = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
 class GroupConnections(Audit):
     class Meta:
@@ -38,4 +38,4 @@ class GroupConnections(Audit):
     group = models.ForeignKey(Groups,on_delete=models.CASCADE, related_name="group")
     user1 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='group_user1')
     user2 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='group_user2')
-    money_owes = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    money_owes = models.DecimalField(max_digits=10, decimal_places=2, default=0)

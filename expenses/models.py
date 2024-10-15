@@ -25,7 +25,8 @@ class Expenses(Audit):
     user2 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user_expense2')
     money_owes = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     distribution_type = models.CharField(choices=ExpenseDistributionType.choices(), max_length=255,null=True)
-    total_money_owes = models.DecimalField(max_digits=4, decimal_places=2)
+    total_money_owes = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.CharField(max_length=255,default=None,null=True)
 
     
 
@@ -34,9 +35,10 @@ class GroupExpenses(Audit):
         db_table = 'sw_group_expenses'
 
     expense_id = models.BigAutoField(primary_key=True)
-    group_user1 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user1_in_group') 
-    group_user2 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user2_in_group')
+    user1 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user1_in_group') 
+    user2 = models.ForeignKey(Users,on_delete=models.CASCADE, related_name='user2_in_group')
     group = models.ForeignKey(Groups,on_delete=models.CASCADE, related_name="this_group")
-    money_owes_in_group = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    distribution_type_in_group = models.CharField(choices=ExpenseDistributionType.choices(), max_length=255,null=True)
-    total_money_owes = models.DecimalField(max_digits=4, decimal_places=2)
+    money_owes = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    description = models.CharField(max_length=255,default=None,null=True)
+    distribution_type = models.CharField(choices=ExpenseDistributionType.choices(), max_length=255,null=True)
+    total_money_owes = models.DecimalField(max_digits=10, decimal_places=2)
